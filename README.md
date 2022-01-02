@@ -33,3 +33,12 @@ For example, for the FordA data set, run
 python3 test/FordA/test.py
 ```
 The results are saved under the "./para/" folder.
+## Training Models
+You can run the following command to train your own models.
+```
+python3 train/XXXX/train.py
+```
+For example, for training the models on FordA data set, run command
+```
+python3 train/FordA/train.py
+```
