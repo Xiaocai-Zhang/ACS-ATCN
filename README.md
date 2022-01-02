@@ -13,7 +13,7 @@ Run the following commands to download data sets from cloud.
 gdown https://drive.google.com/uc?id=1GWhAaP3EgCNd0p_mwdDBk7KL9AQO82hm
 unzip data
 ```
-## Test Models
+## Test Model
 Firstly, run the following codes to download the parameters.
 ```
 gdown https://drive.google.com/uc?id=1FIU6lYU_516dQobQBmrWmq87n76dgOWy
@@ -33,7 +33,7 @@ For example, for the FordA data set, run
 python3 test/FordA/test.py
 ```
 The results are saved under the "./para/" folder.
-## Training Models
+## Train Model
 You can run the following command to train your own models.
 ```
 python3 train/XXXX/train.py
