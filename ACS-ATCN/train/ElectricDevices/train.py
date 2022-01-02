@@ -142,7 +142,7 @@ class attention(Layer):
 
 def Train(x,round_no,f):
     '''
-    train a TCN model
+    train an ATCN model
     '''
     cost_1 = round(x[0], 4)
     ratio = round(x[1], 4)
