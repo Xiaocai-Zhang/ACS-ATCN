@@ -7,3 +7,9 @@ source env/bin/activate
 cd ACS-ATCN
 pip3 install -r requirements.txt
 ```
+## Download Data Sets
+Run the following commands to download data sets from cloud.
+```
+gdown https://drive.google.com/uc?id=1GWhAaP3EgCNd0p_mwdDBk7KL9AQO82hm
+unzip data
+```
