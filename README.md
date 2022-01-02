@@ -24,12 +24,12 @@ Then, you can run the following command to download the trained models.
 gdown https://drive.google.com/uc?id=1mdtcPJayQ-RVEShrw5WLKNXEyomKZnA9
 unzip save_model
 ```
-
+Finally, you can run the following command to replicate the results.
 ```
-python3 test/XXXX/test_XXm.py
+python3 test/XXXX/test.py
 ```
-For example, for the I280-S 15-min prediction task, run
+For example, for the FordA data set, run
 ```
-python3 test/I280-S/test_15m.py
+python3 test/FordA/test.py
 ```
-The results are saved under the "./hypara/" folder.
+The results are saved under the "./para/" folder.
