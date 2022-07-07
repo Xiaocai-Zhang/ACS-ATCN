@@ -15,7 +15,7 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(os.path.dirname(currentdir))
 sys.path.insert(0, parentdir)
 from format.format_train import FormatData
-from evaluate.multi.evaluation_val import Evaluate
+from evaluate.evaluation_val import Evaluate
 import numpy as np
 import random
 import pathlib
