@@ -12,17 +12,20 @@ Run the following commands to download data sets from cloud.
 ```
 gdown https://drive.google.com/uc?id=1GWhAaP3EgCNd0p_mwdDBk7KL9AQO82hm
 unzip data
+rm data.zip
 ```
 ## Test Models
 Firstly, run the following codes to download the parameters.
 ```
 gdown https://drive.google.com/uc?id=1FIU6lYU_516dQobQBmrWmq87n76dgOWy
 unzip para
+rm para.zip
 ```
 Then, you can run the following command to download the trained models.
 ```
 gdown https://drive.google.com/uc?id=1mdtcPJayQ-RVEShrw5WLKNXEyomKZnA9
 unzip save_model
+rm save_model.zip
 ```
 Finally, you can run the following command to replicate the results.
 ```
