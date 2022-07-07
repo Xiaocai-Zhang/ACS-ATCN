@@ -12,7 +12,7 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(os.path.dirname(currentdir))
 sys.path.insert(0, parentdir)
 from format.format_test import FormatData
-from evaluate.binary.evaluation_test import Evaluate
+from evaluate.evaluation_test import Evaluate
 os.chdir(os.path.dirname(__file__))
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
@@ -107,9 +107,9 @@ def Test(x,round_no):
     predictions_test = model.predict(test_inp, batch_size=batchsize)
 
     # performance evaluation
-    G_mean,acc,precision,f1_score,auc = Evaluate(test_oup, predictions_test)
+    G_mean,f1_score,auc,mcc = Evaluate(test_oup, predictions_test)
 
-    return G_mean,acc,precision,f1_score,auc
+    return G_mean,f1_score,auc,mcc
 
 
 if __name__ == '__main__':
@@ -117,10 +117,9 @@ if __name__ == '__main__':
     ParaTable = pd.read_csv(config.ParaPath,dtype='string')
 
     G_mean_li = []
-    acc_li = []
-    precision_li = []
     f1_score_li = []
     auc_li = []
+    mcc_li = []
     time_li = []
     for index,row in ParaTable.iterrows():
         round_no = int(row['round_no'])
@@ -130,15 +129,14 @@ if __name__ == '__main__':
         Para_s = Para_r.split(", ")
         Para_f = [float(item) for item in Para_s]
         print('Round: %s'%(round_no))
-        G_mean,acc,precision,f1_score,auc = Test(Para_f, round_no)
+        G_mean,f1_score,auc,mcc = Test(Para_f, round_no)
         G_mean_li.append(G_mean)
-        acc_li.append(acc)
-        precision_li.append(precision)
         f1_score_li.append(f1_score)
         auc_li.append(auc)
+        mcc_li.append(mcc)
         time_li.append(time)
 
-    SaveDf = pd.DataFrame({'G_mean':G_mean_li,'Accuracy':acc_li,'Precision':precision_li,'F1_score':f1_score_li,'Auc':auc_li,'Time':time_li})
+    SaveDf = pd.DataFrame({'G_mean':G_mean_li,'F1_score':f1_score_li,'Auc':auc_li,'MCC':mcc_li,'Time':time_li})
     SaveDf.to_csv(config.SavePath,index=False)
     SaveDf = SaveDf.astype(float)
 
