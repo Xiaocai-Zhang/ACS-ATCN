@@ -373,5 +373,5 @@ if __name__ == '__main__':
     train_oup_glo = train_oup[IdxTrain, :]
 
     # run 10 times
-    round_li = list(range(1,2))
+    round_li = list(range(0,10))
     [RunDE(num) for num in round_li]
